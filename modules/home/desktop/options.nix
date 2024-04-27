@@ -28,6 +28,47 @@ in {
         };
       };
 
+    # * https://github.com/catppuccin/nix/issues/96
+    colorScheme = mkOption {
+      default = inputs.nix-colors.colorSchemes.catppuccin-mocha;
+
+      type = types.attrs;
+      description = ''
+        Your nix-colors scheme
+      '';
+    };
+
+    gtk = {
+      theme.package = mkOption {
+        description = "The nixpkg for the gtk-theme";
+        type = types.package;
+        default = pkgs.catppuccin-gtk.override {
+          accents = ["lavender"];
+          variant = "mocha";
+        };
+      };
+      iconTheme.package = mkOption {
+        description = "The nixpkg for the gtk-icon theme";
+        type = types.package;
+        default = pkgs.catppuccin-papirus-folders;
+      };
+    };
+    qt = {
+      theme.package = mkOption {
+        description = "The nixpkg for the qt-theme";
+        type = types.package;
+        default = pkgs.catppuccin-kvantum.override {
+          accent = "Lavender";
+          variant = "Mocha";
+        };
+      };
+      name = mkOption {
+        description = "The name of the package which it appears under";
+        type = types.string;
+        default = "kvantum";
+      };
+    };
+
     flatpak = {
       enable = mkEnableOption ''
         installing Flatpak applications with Nix from Home Manager
