@@ -1,5 +1,0 @@
-{
-  imports = [
-    ./nautilus.nix
-  ];
-}

@@ -7,13 +7,13 @@
 with lib; let
   cfg = config.modules.home.desktop;
 in {
-  config = mkIf ((cfg.session == "hyprland") && (cfg.power.lockscreen.enable || cfg.power.hibernation.enable)) {
+  config = mkIf ((cfg.session == "hyprland") && (cfg.power.lockscreen.enable || cfg.power.suspend.enable)) {
     services.hypridle = {
       enable = true;
       settings = {
         general = {
           lock_cmd = "hyprlock";
-          before_sleep_cmd = "pidof hyprlock || hyprlock";
+          before_sleep_cmd = "hyprlock";
           ignore_dbus_inhibit = false;
         };
         listener =

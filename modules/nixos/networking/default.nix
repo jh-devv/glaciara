@@ -1,6 +1,8 @@
-{
+{config, ...}: {
   imports = [
     ./options.nix
-    ./networking.nix
   ];
+  config = {
+    inherit (config.modules.nixos) networking;
+  };
 }

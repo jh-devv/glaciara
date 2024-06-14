@@ -5,18 +5,22 @@
 }:
 with lib; {
   options.modules.home.shell = {
-    subtitutes.enable = mkOption {
-      type = types.bool;
+    subtitutes.enable = mkEnableOption "list of subtitutes for common shell tools";
+    fetcher.package = mkOption {
+      type = types.package;
       description = ''
-        My list of subtitutes for common shell tools, like lsd for ls.
+        Which fetcher (e.g. neofetch, nitch, hyfetch) you want to use
       '';
+      example = pkgs.hyfetch;
+      default = pkgs.nitch;
     };
     package = mkOption {
       type = types.package;
       description = ''
         Select the shell you want to use.
       '';
-      example = pkgs.zsh;
+      example = pkgs.bash;
+      default = pkgs.zsh;
     };
   };
 }

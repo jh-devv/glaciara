@@ -1,0 +1,7 @@
+{
+  imports = [
+    ./gdm
+    ./keyring
+    ./polkit
+  ];
+}

@@ -1,6 +1,6 @@
 {
   imports = [
     ./options.nix
-    ./zsh.nix
+    ./zsh
   ];
 }

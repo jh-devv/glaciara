@@ -19,7 +19,7 @@
       session = "hyprland";
       power = {
         lockscreen.enable = true;
-        hibernation.enable = true;
+        suspend.enable = true;
       };
     };
     programs = lib.genAttrs ["firefox" "fractal" "kitty" "mpv" "nautilus" "neovim" "newsboat" "text-editor" "vscode"] (_k: {enable = true;});

@@ -10,9 +10,11 @@ in {
   config = mkIf (cfg.session == "gnome") {
     modules.nixos = {
       services = {
-        keyring.gnome.enable = true;
-        polkit.gnome.enable = true;
-        desktop-manager.gdm.enable = true;
+        gnome = {
+          keyring.enable = true;
+          polkit.enable = true;
+          gdm.enable = true;
+        };
       };
     };
     services.xserver = {

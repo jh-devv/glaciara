@@ -5,7 +5,7 @@
 }:
 with lib; {
   options.modules.home.programs =
-    genAttrs ["fractal" "kitty" "mpv" "nautilus" "neovim" "newsboat" "text-editor" "vscode" "star-citizen"] (k: {enable = mkEnableOption k;})
+    genAttrs ["fractal" "kitty" "mpv" "nautilus" "neovim" "newsboat" "text-editor" "vscode"] (k: {enable = mkEnableOption k;})
     // {
       firefox = {
         enable = mkEnableOption "firefox";

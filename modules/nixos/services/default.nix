@@ -1,10 +1,12 @@
 {
   imports = [
     ./options.nix
-    ./containers
-    ./desktop-manager
-    ./hardware
-    ./keyring
-    ./polkit
+    ./bluetooth
+    ./cups
+    ./flatpak
+    ./gnome
+    ./i2c
+    ./pipewire
+    ./smart-card
   ];
 }

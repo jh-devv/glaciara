@@ -27,7 +27,7 @@
       lanzaboote.enable = true;
     };
 
-    services.hardware = {
+    services = {
       smart-card.enable = true;
       i2c.enable = true;
     };

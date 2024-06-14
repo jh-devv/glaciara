@@ -24,14 +24,14 @@ in {
           description = "The local flake path of the wallpaper for the lockscreen.";
         };
       };
-      hibernation = {
-        enable = mkEnableOption "automatic system hibernation";
+      suspend = {
+        enable = mkEnableOption "automatic system suspen";
         timeout = mkOption {
           default = 30;
           example = 30;
 
           type = types.int;
-          description = "Timeout for automatic system hibernation (in minutes)";
+          description = "Timeout for automatic system suspend (in minutes)";
         };
       };
     };

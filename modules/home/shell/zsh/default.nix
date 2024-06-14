@@ -11,9 +11,7 @@ in {
     programs = {
       zsh = {
         enable = true;
-        initExtra = ''
-          nitch
-        '';
+        initExtra = getExe cfg.fetcher.package;
 
         syntaxHighlighting.enable = true;
         autosuggestion.enable = true;
